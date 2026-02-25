@@ -3,6 +3,13 @@ pipeline {
 
     stages {
 
+        stage('Clone') {
+            steps {
+                echo 'Cloning from GitHub...'
+                git 'https://github.com/<your-username>/devops-java-jenkins.git'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
