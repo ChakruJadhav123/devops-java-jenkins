@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                echo 'Cloning from GitHub...'
-                git branch:'main',url: 'https://github.com/ChakruJadhav123/devops-java-jenkins.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
