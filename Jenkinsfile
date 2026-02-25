@@ -3,10 +3,10 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
+        stage('Checkout Code') {
             steps {
                 echo 'Cloning from GitHub...'
-                git 'https://github.com/ChakruJadhav123/devops-java-jenkins.git'
+                checkout scm
             }
         }
 
@@ -24,5 +24,14 @@ pipeline {
             }
         }
 
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully! 🎉'
+        }
+        failure {
+            echo 'Pipeline failed ❌'
+        }
     }
 }
